@@ -1,0 +1,303 @@
+:root {
+    --bckColor: #1a173d;
+    --textColor: hsl(0, 0%, 100%);
+    --ubuntuFont: Ubuntu;
+    --rFont: Righteous;
+    --orange: #e25300;
+  }
+  
+  body {
+    background-color: var(--bckColor);
+    color: var(--textColor);
+    font-family: var(--ubuntuFont);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+  }
+  @media only screen and (min-width: 1200px) {
+    .container {
+      margin: 0 148px;
+    }
+  }
+  /* Reset styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  link {
+    text-decoration: none;
+  }
+  
+  /* Header */
+  header {
+    padding: 0 40px;
+    margin-bottom: 90px;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo__name {
+    color: var(--orange);
+    font-size: 24px;
+  }
+  
+  @font-face {
+    font-family: "icomoon";
+    src: url("fonts/icomoon.eot?daighz");
+    src: url("../fonts/icomoon.eot?daighz#iefix") format("embedded-opentype"),
+      url("../fonts/icomoon.ttf?daighz") format("truetype"),
+      url("../fonts/icomoon.woff?daighz") format("woff"),
+      url("../fonts/icomoon.svg?daighz#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-family: "icomoon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .menu-button:before {
+    font-family: "icomoon";
+    content: "\61";
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav__list > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 1200px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .nav__list {
+      position: absolute;
+      top: 32px;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .nav__list li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .nav__list li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .nav__list > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+    .nav__list > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+  
+  .header-logo-link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 40px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    header {
+      margin-bottom: 52px;
+    }
+    .header-logo-link {
+      gap: 20px;
+    }
+    .logo__name {
+      font-size: 36px;
+    }
+    .logo-img {
+      width: 60px;
+    }
+  }
+  .header-btn {
+    display: none;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    header {
+      margin-top: 51px;
+      margin-bottom: 109px;
+    }
+    .nav__list {
+      gap: 32.58px;
+      font-size: 16px;
+      margin-right: 33.76px;
+    }
+    .menu__link:hover::after,
+    .menu__link:focus::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: var(--orange);
+      border-radius: 4px;
+    }
+    .header-btn {
+      display: block;
+      background-color: var(--orange);
+      font-size: 16px;
+      padding: 10px 16px;
+      color: var(--textColor);
+      border: none;
+      border-radius: 24px;
+    }
+  }
+  
+  /* Educator */
+  .intro__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(
+      180deg,
+      rgba(133, 100, 187, 0.67) 1.04%,
+      rgba(102, 44, 197, 0.85) 88.02%
+    );
+    width: 312px;
+    height: 355px;
+    padding: 0 20px;
+    border-radius: 25px;
+  }
+  
+  .intro-title {
+    width: 275px;
+    font-size: 30px;
+  }
+  
+  .subscribe-button {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 24px;
+    color: var(--rFont);
+    background-color: var(--orange);
+    border: none;
+  }
+  
+  .watch-button {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 24px;
+    border: 1px solid var(--orange);
+    background-color: transparent;
+    color: var(--orange);
+  }
+  
+  /* @media only screen and (min-width: 768px) {
+     {
+    }
+  } */
+  
+  @media only screen and (min-width: 1200px) {
+    .intro-text {
+      font-size: 18px;
+    }
+  }
+  
